@@ -1,26 +1,26 @@
 <template lang="pug">
 div
+  nuxt-link(to='/') return top
   h1 {{ post.title }}
-  div(v-html="post.body")
+  vue-markdown(:source="post.body")
 </template>
 
 <script>
 import post from '~/apollo/queries/post'
+import VueMarkdown from 'vue-markdown'
 
 export default {
+  components: { VueMarkdown },
   data () {
     return {
       issueNumber: parseInt(this.$route.params.id),
       post: {}
     }
   },
-  created () {
-    console.log(this)
-  },
   apollo: {
     post: {
-      prefetch: true,
       query: post,
+      prefetch: true,
       variables () {
         return {
           number: this.issueNumber ? this.issueNumber : 1
