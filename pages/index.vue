@@ -1,18 +1,27 @@
 <template lang="pug">
-.index
-  h1 hatotology
+ul
+  li(v-for="post in posts")
+    nuxt-link(:to="{ name: 'posts-id', params: { id: post.number } }") {{ post.title }}
 </template>
 
 <script>
-export default {
-}
-</script>
+import posts from '~/apollo/queries/posts'
 
-<style lang="scss">
-.index {
-  h1 {
-    color: #333;
-    text-decoration: underline;
+export default {
+  data () {
+    return {
+      posts: []
+    }
+  },
+  apollo: {
+    posts: {
+      prefetch: true,
+      query: posts,
+      variables: {
+        count: 10
+      },
+      update: ({ repository }) => repository.issues.nodes
+    }
   }
 }
-</style>
+</script>

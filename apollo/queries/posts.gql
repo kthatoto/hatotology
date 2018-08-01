@@ -1,0 +1,10 @@
+query ($count: Int!) {
+  repository(owner: "kthatoto", name: "hatotology") {
+    issues(last: $count) {
+      nodes {
+        title
+        number
+      }
+    }
+  }
+}

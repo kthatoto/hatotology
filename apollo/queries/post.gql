@@ -1,0 +1,8 @@
+query ($number: Int!) {
+  repository(owner: "kthatoto", name: "hatotology") {
+    issue(number: $number) {
+      title
+      body
+    }
+  }
+}
