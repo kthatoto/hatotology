@@ -36,7 +36,11 @@ module.exports = {
     }
   },
 
-  modules: ['@nuxtjs/apollo'],
+  env: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+  },
+
+  modules: ['@nuxtjs/apollo', '@nuxtjs/dotenv'],
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'

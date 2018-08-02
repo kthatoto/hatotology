@@ -5,7 +5,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 export default () => {
   const httpLink = new HttpLink({ uri: 'https://api.github.com/graphql' })
 
-  const token = '74eaee6dd9946b2254dd235902bd883b2ef12b4b'
+  const token = process.env.GITHUB_TOKEN
 
   const middlewareLink = new ApolloLink((operation, forward) => {
     operation.setContext({
