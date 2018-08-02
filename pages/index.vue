@@ -1,6 +1,5 @@
 <template lang="pug">
 div
-  h1 {{ user }}
   ul
     li(v-for="post in posts")
       nuxt-link(:to="{ name: 'posts-id', params: { id: post.number } }") {{ post.title }}
@@ -12,12 +11,10 @@ import posts from '~/apollo/queries/posts'
 export default {
   data () {
     return {
-      posts: [],
-      user: ''
+      posts: []
     }
   },
   created () {
-    this.user = process.env.USER
   },
   apollo: {
     posts: {
