@@ -1,7 +1,6 @@
 <template lang="pug">
 div
-  nuxt-link(to='/') return top
-  h1 {{ post.title }}
+  h2 {{ post.title }}
   vue-markdown(:source="post.body")
 </template>
 
