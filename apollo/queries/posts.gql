@@ -8,6 +8,7 @@ query ($count: Int!) {
       nodes {
         title
         number
+        createdAt
       }
     }
   }
