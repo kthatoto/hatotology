@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.index
   ul
     li(v-for="post in posts")
       nuxt-link(:to="{ name: 'posts-id', params: { id: post.number } }") {{ post.title }}
@@ -11,7 +11,7 @@ import posts from '~/apollo/queries/posts'
 export default {
   data () {
     return {
-      posts: [],
+      posts: []
     }
   },
   created () {
@@ -28,3 +28,7 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.index {
+}
+</style>
