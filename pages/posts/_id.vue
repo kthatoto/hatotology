@@ -1,6 +1,8 @@
 <template lang="pug">
 div
   h2 {{ post.title }}
+  ul
+    li.label(v-for="label in post.labels.nodes") {{ label.name }}
   vue-markdown(:source="post.body")
 </template>
 
@@ -30,3 +32,11 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.label {
+  display: inline;
+  border: 1px solid #aaa;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+</style>

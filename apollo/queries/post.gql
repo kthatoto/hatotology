@@ -3,6 +3,13 @@ query ($number: Int!) {
     issue(number: $number) {
       title
       body
+      createdAt
+      updatedAt
+      labels(first: 10) {
+        nodes {
+          name
+        }
+      }
     }
   }
 }
