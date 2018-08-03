@@ -11,7 +11,7 @@ import posts from '~/apollo/queries/posts'
 export default {
   data () {
     return {
-      posts: []
+      posts: [],
     }
   },
   created () {
