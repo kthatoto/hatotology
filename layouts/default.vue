@@ -34,6 +34,7 @@ h6 { font-size: 0.8rem; }
 }
 .title {
   font-size: 2.4rem;
+  margin-bottom: 10px;
   &:hover {
     text-decoration: underline;
   }
