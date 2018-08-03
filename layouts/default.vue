@@ -2,7 +2,7 @@
 .default
   h1.title
     nuxt-link(to="/") hatotolo.gy
-  nuxt
+  nuxt.main
 </template>
 
 <style lang="scss">
@@ -20,12 +20,12 @@ html {
 a {
   color: inherit;
 }
-h1 { font-size: 2.0rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1.0rem; }
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1.0rem; }
+h6 { font-size: 0.8rem; }
 
 .default {
   width: 800px;
@@ -33,8 +33,18 @@ h6 { font-size: 1.0rem; }
   padding-top: 200px;
 }
 .title {
+  font-size: 2.0rem;
   &:hover {
     text-decoration: underline;
+  }
+}
+.main {
+  a {
+    padding: 2px;
+    &:hover {
+      background-color: #37619c;
+      color: white;
+    }
   }
 }
 </style>
