@@ -1,6 +1,10 @@
 query ($count: Int!) {
   repository(owner: "kthatoto", name: "hatotology") {
-    issues(last: $count, orderBy: {field: CREATED_AT, direction: DESC}) {
+    issues(
+      last: $count,
+      orderBy: {field: CREATED_AT, direction: DESC},
+      states: OPEN
+    ) {
       nodes {
         title
         number
