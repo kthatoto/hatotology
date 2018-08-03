@@ -1,13 +1,13 @@
 <template lang="pug">
 div
   div(v-if="post.title")
-    h2 {{ post.title }}
+    h2.title {{ post.title }}
     ul
       span.label__header tags:
       li.label(v-for="label in post.labels.nodes") {{ label.name }}
     p.date Created at: {{ formattedDate(post.createdAt) }}
     p.date Updated at: {{ formattedDate(post.updatedAt) }}
-    vue-markdown(:source="post.body")
+    vue-markdown.markdown(:source="post.body")
 </template>
 
 <script>
@@ -42,7 +42,10 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.title {
+  font-size: 1.8rem;
+}
 .label {
   display: inline;
   border: 1px solid #aaa;
@@ -58,5 +61,12 @@ export default {
   text-align: right;
   color: #888;
   font-size: 0.8rem;
+}
+.markdown {
+  /deep/ {
+    li {
+      list-style: inside;
+    }
+  }
 }
 </style>

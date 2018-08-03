@@ -31,20 +31,20 @@ h6 { font-size: 0.8rem; }
   width: 800px;
   margin: 0 auto;
   padding-top: 200px;
-}
-.title {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-.main {
-  a {
-    padding: 2px;
+  > .title {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
     &:hover {
-      background-color: #37619c;
-      color: white;
+      text-decoration: underline;
+    }
+  }
+  > .main {
+    a {
+      padding: 2px;
+      &:hover {
+        background-color: #37619c;
+        color: white;
+      }
     }
   }
 }
