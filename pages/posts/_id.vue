@@ -47,6 +47,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .title {
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
   font-size: 1.8rem;
 }
 .label {
@@ -66,6 +68,7 @@ export default {
   font-size: 0.8rem;
 }
 .markdown {
+  margin-bottom: 50px;
   /deep/ {
     li {
       list-style: inside;
