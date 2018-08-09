@@ -1,9 +1,9 @@
 <template lang="pug">
 .header
   div(v-if="!isAuthenticated")
-    p.button(@click="doLogin") login
+    p.button(@click="doLogin") Login
   div(v-else)
-    p.button(@click="doLogout") logout
+    p.button(@click="doLogout") Logout
     img.avatar(:src="user.photoURL")
 </template>
 <script>
