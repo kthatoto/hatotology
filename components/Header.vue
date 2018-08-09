@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   padding: 20px;
-  width: 1000px;
+  width: 850px;
   margin: 0 auto;
 }
 .avatar {
