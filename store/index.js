@@ -9,6 +9,9 @@ export const state = () => ({
 export const getters = {
   isAuthenticated (state) {
     return !!state.user
+  },
+  getUser (state) {
+    return state.user
   }
 }
 

@@ -1,9 +1,10 @@
 <template lang="pug">
 .default
   Header
-  h1.title
-    nuxt-link(to="/") hatotolo.gy
-  nuxt.main
+  .main
+    h1.title
+      nuxt-link(to="/") hatotolo.gy
+    nuxt.content
 </template>
 
 <script>
@@ -35,7 +36,7 @@ h4 { font-size: 1.2rem; }
 h5 { font-size: 1.0rem; }
 h6 { font-size: 0.8rem; }
 
-.default {
+.main {
   width: 800px;
   margin: 0 auto;
   padding-top: 200px;
@@ -46,7 +47,7 @@ h6 { font-size: 0.8rem; }
       text-decoration: underline;
     }
   }
-  > .main {
+  > .content {
     a {
       padding: 2px;
       &:hover {
