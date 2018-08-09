@@ -40,6 +40,7 @@ h6 { font-size: 0.8rem; }
   width: 800px;
   margin: 0 auto;
   padding-top: 200px;
+  padding-bottom: 100px;
   > .title {
     font-size: 2.4rem;
     margin-bottom: 10px;
