@@ -11,12 +11,6 @@ import { mapActions } from 'vuex'
 import firebase from '@/plugins/firebase'
 
 export default {
-  // computed: {
-  //   ...mapGetters({
-  //     isAuthenticated: 'isAuthenticated',
-  //     user: 'getUser'
-  //   })
-  // },
   data () {
     return {
       isAuthenticated: false,
