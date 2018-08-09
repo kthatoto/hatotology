@@ -8,6 +8,7 @@ div
     p.date Created at: {{ formattedDate(post.createdAt) }}
     p.date Updated at: {{ formattedDate(post.updatedAt) }}
     vue-markdown.markdown(:source="post.body")
+    Comments(:comments="post.comments.nodes")
 </template>
 
 <script>
@@ -15,8 +16,10 @@ import post from '~/apollo/queries/post'
 import VueMarkdown from 'vue-markdown'
 import moment from 'moment'
 
+import Comments from '~/components/Comments'
+
 export default {
-  components: { VueMarkdown },
+  components: { VueMarkdown, Comments },
   data () {
     return {
       issueNumber: parseInt(this.$route.params.id),
