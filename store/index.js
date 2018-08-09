@@ -24,9 +24,12 @@ export const mutations = {
 export const actions = {
   login () {
     return new Promise((resolve, reject) => {
+      githubProvider.addScope('repo')
       firebase.auth().signInWithRedirect(githubProvider)
-        .then(() => resolve())
-        .catch((err) => reject(err))
+        .then(result => {
+          return resolve()
+        })
+        .catch(err => reject(err))
     })
   },
   logout ({ commit }) {

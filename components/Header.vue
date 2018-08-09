@@ -42,7 +42,18 @@ export default {
   },
   async mounted () {
     let user = await new Promise((resolve, reject) => {
-      firebase.auth().onAuthStateChanged((user) => resolve(user))
+      firebase.auth().onAuthStateChanged(user => {
+        return resolve(user)
+      })
+      firebase.auth().getRedirectResult().then(result => {
+        if (esult.credential) {
+          const token = result.credential.accessToken
+          console.log(token)
+        }
+        console.log(result)
+      }).catch(error => {
+        console.log(error)
+      })
     })
     this.setUser(user)
   }
