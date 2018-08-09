@@ -63,6 +63,7 @@ export default {
   float: right;
 }
 .button {
+  box-shadow: 0 0 3px 0 #333;
   cursor: pointer;
   background-color: #37619c;
   color: white;
