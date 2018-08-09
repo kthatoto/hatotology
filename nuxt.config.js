@@ -46,6 +46,10 @@ module.exports = {
     FIREBASE_MESSAGINGSENDERID: process.env.FIREBASE_MESSAGINGSENDERID
   },
 
+  router: {
+    middleware: 'authenticated'
+  },
+
   modules: ['@nuxtjs/apollo', '@nuxtjs/dotenv'],
   apollo: {
     clientConfigs: {
