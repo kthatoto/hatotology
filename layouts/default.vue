@@ -1,9 +1,17 @@
 <template lang="pug">
 .default
+  Header
   h1.title
     nuxt-link(to="/") hatotolo.gy
   nuxt.main
 </template>
+
+<script>
+import Header from '~/components/Header'
+export default {
+  components: { Header }
+}
+</script>
 
 <style lang="scss">
 html {
