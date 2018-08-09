@@ -9,6 +9,7 @@ div
     p.date Updated at: {{ formattedDate(post.updatedAt) }}
     vue-markdown.markdown(:source="post.body")
     Comments(:comments="post.comments.nodes")
+    comment-form(v-if="isAuthenticated" :user="user")
 </template>
 
 <script>
@@ -17,14 +18,23 @@ import VueMarkdown from 'vue-markdown'
 import moment from 'moment'
 
 import Comments from '~/components/Comments'
+import CommentForm from '~/components/CommentForm'
 
 export default {
-  components: { VueMarkdown, Comments },
+  components: { VueMarkdown, Comments, CommentForm },
   data () {
     return {
       issueNumber: parseInt(this.$route.params.id),
-      post: {}
+      post: {},
+      isAuthenticated: false,
+      user: null
     }
+  },
+  created () {
+    this.$store.subscribe((mutation, state) => {
+      this.isAuthenticated = !!state.user
+      this.user = state.user
+    })
   },
   apollo: {
     post: {
