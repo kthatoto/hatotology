@@ -14,6 +14,9 @@ export default {
   },
   methods: {
     post () {
+      if (this.content.length === 0) {
+        return
+      }
       if (localStorage.githubAccessToken) {
         console.log(localStorage.githubAccessToken)
         this.$axios({
@@ -22,7 +25,6 @@ export default {
           headers: { Authorization: `token ${localStorage.githubAccessToken}` },
           data: { body: this.content }
         }).then(response => {
-          console.log(response)
         }).catch(error => {
           console.log(error)
         })
