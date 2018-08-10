@@ -30,6 +30,11 @@ export const actions = {
           return resolve()
         })
         .catch(err => reject(err))
+      firebase.auth().getRedirectResult()
+        .then(result => {})
+        .catch(error => {
+          console.log(error)
+        })
     })
   },
   logout ({ commit }) {
