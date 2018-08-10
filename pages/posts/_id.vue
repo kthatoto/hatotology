@@ -9,7 +9,7 @@ div
     p.date Updated at: {{ formattedDate(post.updatedAt) }}
     vue-markdown.markdown(:source="post.body")
     Comments(:comments="post.comments.nodes")
-    comment-form(v-if="isAuthenticated" :user="user")
+    comment-form(v-if="isAuthenticated" :user="user" :issueNumber="issueNumber")
 </template>
 
 <script>

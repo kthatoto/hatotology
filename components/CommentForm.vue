@@ -2,14 +2,31 @@
 .commentForm
   h4 Post Comment
   textarea.textarea(v-model="content")
-  .button Post
+  .button(@click="post") Post
 </template>
 <script>
 export default {
-  props: ['user'],
+  props: ['user', 'issueNumber'],
   data () {
     return {
       content: ''
+    }
+  },
+  methods: {
+    post () {
+      if (localStorage.githubAccessToken) {
+        console.log(localStorage.githubAccessToken)
+        this.$axios({
+          method: 'POST',
+          url: `https://api.github.com/repos/kthatoto/hatotology/issues/${this.issueNumber}/comments`,
+          headers: { Authorization: `token ${localStorage.githubAccessToken}` },
+          data: { body: this.content }
+        }).then(response => {
+          console.log(response)
+        }).catch(error => {
+          console.log(error)
+        })
+      }
     }
   }
 }

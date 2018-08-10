@@ -46,11 +46,10 @@ export default {
         return resolve(user)
       })
       firebase.auth().getRedirectResult().then(result => {
-        if (esult.credential) {
+        if (result.credential) {
           const token = result.credential.accessToken
-          console.log(token)
+          localStorage.setItem('githubAccessToken', token)
         }
-        console.log(result)
       }).catch(error => {
         console.log(error)
       })
