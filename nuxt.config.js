@@ -50,10 +50,11 @@ module.exports = {
     middleware: 'authenticated'
   },
 
-  modules: ['@nuxtjs/apollo', '@nuxtjs/dotenv'],
+  modules: ['@nuxtjs/apollo', '@nuxtjs/dotenv', '@nuxtjs/axios'],
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
     }
-  }
+  },
+  axios: {}
 }
