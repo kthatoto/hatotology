@@ -36,6 +36,12 @@ module.exports = {
     }
   },
 
+  generate: {
+    routes: [
+      '/posts/1'
+    ]
+  },
+
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     FIREBASE_APIKEY: process.env.FIREBASE_APIKEY,
