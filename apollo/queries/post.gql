@@ -10,7 +10,7 @@ query ($number: Int!) {
           name
         }
       }
-      comments(first: 10) {
+      comments(first: 50) {
         nodes {
           body
           author {
