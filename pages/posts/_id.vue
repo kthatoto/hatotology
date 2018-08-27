@@ -32,9 +32,13 @@ export default {
   },
   created () {
     this.$store.subscribe((mutation, state) => {
+      console.log('called')
       this.isAuthenticated = !!state.user
       this.user = state.user
     })
+    if (!!this.$store.state.user) {
+      this.isAuthenticated = true
+    }
   },
   apollo: {
     post: {
