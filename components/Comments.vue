@@ -40,6 +40,7 @@ export default {
   margin-bottom: 10px;
   &__date {
     font-size: 0.8rem;
+    margin-left: 10px;
   }
   &__avatar {
     width: 40px;
