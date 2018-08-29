@@ -43,7 +43,7 @@ export default {
   apollo: {
     post: {
       query: post,
-      prefetch: true,
+      prefetch: false,
       variables () {
         return {
           number: this.issueNumber ? this.issueNumber : 1

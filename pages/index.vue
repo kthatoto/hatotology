@@ -18,7 +18,7 @@ export default {
   },
   apollo: {
     posts: {
-      prefetch: true,
+      prefetch: false,
       query: posts,
       variables: {
         count: 10
