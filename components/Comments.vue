@@ -8,14 +8,22 @@
         p
           | id:&nbsp;
           span.comment__author {{ comment.author.login }}
+          span.comment__date {{ formattedDate(comment.createdAt) }}
         vue-markdown.comment__body(:source="comment.body")
 
 </template>
 <script>
 import VueMarkdown from 'vue-markdown'
+import moment from 'moment'
+
 export default {
   components: { VueMarkdown },
-  props: ['comments']
+  props: ['comments'],
+  methods: {
+    formattedDate(date) {
+      return moment(date).format('YYYY/MM/DD-HH:mm')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -30,6 +38,9 @@ export default {
 .comment {
   overflow: hidden;
   margin-bottom: 10px;
+  &__date {
+    font-size: 0.8rem;
+  }
   &__avatar {
     width: 40px;
     height: 40px;

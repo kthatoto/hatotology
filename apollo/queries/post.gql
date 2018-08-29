@@ -13,6 +13,7 @@ query ($number: Int!) {
       comments(first: 50) {
         nodes {
           body
+          createdAt
           author {
             avatarUrl
             login
