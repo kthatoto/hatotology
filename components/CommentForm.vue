@@ -18,7 +18,6 @@ export default {
         return
       }
       if (localStorage.githubAccessToken) {
-        console.log(localStorage.githubAccessToken)
         this.$axios({
           method: 'POST',
           url: `https://api.github.com/repos/kthatoto/hatotology/issues/${this.issueNumber}/comments`,
