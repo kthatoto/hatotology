@@ -83,7 +83,22 @@ export default {
 .markdown {
   margin-bottom: 50px;
   /deep/ {
+    h2 {
+      margin: 10px 0 15px;
+      border-bottom: 1px solid #333;
+    }
+    h3 {
+      margin: 10px 0;
+    }
+    h4 {
+      padding-left: 15px;
+      margin: 10px 0 5px;
+    }
+    p {
+      padding-left: 30px;
+    }
     li {
+      padding-left: 30px;
       list-style: inside;
     }
   }
