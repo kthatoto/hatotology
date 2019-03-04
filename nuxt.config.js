@@ -57,6 +57,10 @@ module.exports = {
     middleware: 'authenticated'
   },
 
+  plugins: [
+    '~/plugins/eagle.js'
+  ],
+
   modules: ['@nuxtjs/apollo', '@nuxtjs/dotenv', '@nuxtjs/axios'],
   apollo: {
     clientConfigs: {
